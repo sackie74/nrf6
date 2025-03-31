@@ -1,0 +1,315 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.filters select, .filters input {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex-grow: 1;
+    min-width: 150px;
+}
+
+/* Map Container */
+#map {
+    height: 70vh;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* Dashboard Styles */
+#dashboard {
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.dashboard-section {
+    margin-bottom: 30px;
+}
+
+.dashboard-section h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#dashboard-btn {
+    background: #2c3e50;
+}
+
+#dashboard-btn:hover {
+    background: #1a252f;
+}
+
+#hide-dashboard-btn {
+    background: #2c3e50;
+    width: 100%;
+    max-width: 200px;
+}
+
+#hide-dashboard-btn:hover {
+    background: #1a252f;
+}
+
+#add-project-btn {
+    background: #27ae60;
+}
+
+#add-project-btn:hover {
+    background: #219653;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.export-buttons button {
+    background: #7f8c8d;
+}
+
+.export-buttons button:hover {
+    background: #95a5a6;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9f7fe;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.completed {
+    background-color: #28a745;
+}
+
+.seventyfive-complete {
+    background-color: #17a2b8;
+}
+
+.in-progress {
+    background-color: #ffc107;
+}
+
+.not-started {
+    background-color: #dc3545;
+}
+
+/* Chart Container */
+.chart-container {
+    width: 100%;
+    height: 350px;
+    margin: 20px 0;
+    position: relative;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+#google-form {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* Map Controls */
+.leaflet-control-layers {
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    background: white;
+}
+
+.leaflet-control-layers-toggle {
+    width: 36px;
+    height: 36px;
+    background-size: 26px;
+}
+
+.leaflet-control-layers-expanded {
+    padding: 6px 10px;
+}
+
+.leaflet-control-layers label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.leaflet-control-layers-selector {
+    margin-right: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    #map {
+        height: 60vh;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .filters {
+        width: 100%;
+    }
+    
+    .filters select, .filters input {
+        width: 100%;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}

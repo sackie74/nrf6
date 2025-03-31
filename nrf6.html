@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberia Project Tracking System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Liberia Project Tracking System</h1>
+        
+        <div class="controls">
+            <button id="dashboard-btn">Show Dashboard</button>
+            <button id="add-project-btn"><i class="fas fa-plus"></i> Add Project</button>
+            
+            <div class="filters">
+                <select id="county-filter">
+                    <option value="">All Counties</option>
+                </select>
+                <select id="status-filter">
+                    <option value="">All Statuses</option>
+                    <option value="completed">Completed</option>
+                    <option value="75% complete">75% Complete</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="not started">Not Started</option>
+                </select>
+                <input type="text" id="search-box" placeholder="Search projects...">
+            </div>
+        </div>
+
+        <div id="loading-spinner" class="spinner"></div>
+        
+        <div id="map"></div>
+        
+        <div id="dashboard" style="display:none;">
+            <div class="dashboard-section">
+                <h3>Project Summary by County</h3>
+                <div class="chart-container">
+                    <canvas id="countyChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="statusPieChart"></canvas>
+                </div>
+            </div>
+            <div class="dashboard-section">
+                <h3>Detailed Project Status</h3>
+                <div class="export-buttons">
+                    <button id="export-csv">Export CSV</button>
+                    <button id="export-pdf">Export PDF</button>
+                </div>
+                <table id="project-table">
+                    <thead>
+                        <tr>
+                            <th>County</th>
+                            <th>Community</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <button id="hide-dashboard-btn" style="margin-top:20px;">Back to Map</button>
+        </div>
+
+        <!-- Add Project Modal -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add New Project</h2>
+                <iframe id="google-form" 
+                    src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
+                    frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JS files from CDN with fallbacks -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
